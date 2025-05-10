@@ -1,8 +1,12 @@
-Please suggest 10 commit messages, given the following diff:
+Please suggest a comprehensive commit message, given the following diff:
 
 <diff>
 {{.Diff}}
 </diff>
+
+<readme>
+{{.Readme}}
+</readme>
 
 Criteria:
 1. Format: Each commit message must follow the conventional commits format,
@@ -39,10 +43,3 @@ are helpful to someone reading the project's history.
 and understanding of the project over time.
 - If multiple changes are present, make sure you capture them all in each commit
 message.
-
-Keep in mind you will suggest 10 commit messages. Only 1 will be used. It's
-better to push yourself (esp to synthesize to a higher level). I'm looking
-for your best commits, not just the best average commit. It's better to cover more
-scenarios than include a lot of overlap; thus, each commit message should be
-focused on a specific change or feature.
-Write your 10 commit messages below in the format shown in Output Template section above."
