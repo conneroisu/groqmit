@@ -8,10 +8,10 @@
   src = ./../../.;
 in
   {
-    conneroh = pkgs.buildGoModule {
+    groqmit = pkgs.buildGoModule {
       inherit src version;
-      vendorHash = "sha256-kOGauV5dMTcHvSR7uWvY1dcKR4WqlWccDfnXtycsRVI=";
-      name = "gita";
+      vendorHash = "";
+      name = "groqmit";
       goSum = ./../../go.sum;
       subPackages = ["."];
     };

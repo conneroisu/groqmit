@@ -13,13 +13,8 @@ import (
 // RootCmd represents the base command when called without any subcommand.
 var RootCmd = &cobra.Command{
 	Use:   "groqmit",
-	Short: "A brief description of your application",
-	Long: `A longer description that spans multiple lines and likely contains
-examples and usage of using your application. For example:
-
-Cobra is a CLI library for Go that empowers applications.
-This application is a tool to generate the needed files
-to quickly create a Cobra application.`,
+	Short: "groqmit is a tool for generating git commits",
+	Long:  ``,
 }
 
 // Execute adds all child commands to the root command and sets flags appropriately.
