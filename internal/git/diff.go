@@ -27,3 +27,26 @@ func Diff(ctx context.Context) (string, error) {
 	}
 	return w.String(), nil
 }
+
+// DiffFile returns the diff between the current branch and the index for the
+// given file.
+func DiffFile(ctx context.Context, filepath string) (string, error) {
+	var w, ew bytes.Buffer
+	cmd := exec.CommandContext(
+		ctx,
+		"git",
+		"diff",
+		"--cached",
+		filepath,
+	)
+	cmd.Stdout = &w
+	cmd.Stderr = &ew
+	err := cmd.Run()
+	if err != nil {
+		return "", err
+	}
+	if ew.Len() > 0 {
+		return "", errors.New(ew.String())
+	}
+	return w.String(), nil
+}
