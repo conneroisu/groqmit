@@ -1,18 +1,21 @@
 package cmd
 
 import (
-	_ "embed"
 	"fmt"
 
 	"github.com/conneroisu/groqmit/internal/git"
 	"github.com/spf13/cobra"
 )
 
+// GenerateCmd represents the generate command.
 var GenerateCmd = &cobra.Command{
 	Use:   "generate",
-	Short: "Generate commit messages",
-	RunE: func(cmd *cobra.Command, args []string) error {
-		diff, err := git.GetDiff()
+	Short: "Generate commit message",
+	RunE: func(
+		cmd *cobra.Command,
+		args []string,
+	) error {
+		diff, err := git.Diff(cmd.Context())
 		if err != nil {
 			return err
 		}

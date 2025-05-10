@@ -2,14 +2,16 @@ package git
 
 import (
 	"bytes"
+	"context"
 	"errors"
 	"os/exec"
 )
 
-// GetDiff returns the diff between the current branch and the index.
-func GetDiff() (string, error) {
+// Diff returns the diff between the current branch and the index.
+func Diff(ctx context.Context) (string, error) {
 	var w, ew bytes.Buffer
-	cmd := exec.Command(
+	cmd := exec.CommandContext(
+		ctx,
 		"git",
 		"diff",
 		"--cached",

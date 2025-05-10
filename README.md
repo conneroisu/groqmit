@@ -1,17 +1,17 @@
-# gita
+# groqmit
 
 Generates git commit messages using the groq api.
 
 ## Installation
 
 ```bash
-go install github.com/conneroisu/gita@latest
+go install github.com/conneroisu/groqmit@latest
 ```
 
 ## Usage
 
 ```bash
-gita
+groqmit generate
 ```
 
 ## License
