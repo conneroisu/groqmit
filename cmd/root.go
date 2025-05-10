@@ -24,8 +24,8 @@ to quickly create a Cobra application.`,
 	},
 }
 
+// Execute adds all child commands to the root command and sets flags appropriately.
 func Execute() error {
-
 	home, err := os.UserConfigDir()
 	if err != nil {
 		return fmt.Errorf("failed to get home directory: %w", err)
