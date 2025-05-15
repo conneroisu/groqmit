@@ -21,5 +21,6 @@ func Root(ctx context.Context) (string, error) {
 	if err != nil {
 		return "", err
 	}
+
 	return w.String(), nil
 }

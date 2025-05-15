@@ -20,6 +20,7 @@ var GenerateCmd = &cobra.Command{
 			return err
 		}
 		fmt.Println(diff)
+
 		return nil
 	},
 }

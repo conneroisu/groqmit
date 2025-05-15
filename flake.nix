@@ -3,7 +3,7 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
   };
-  outputs = inputs @ {nixpkgs, ...}: let
+  outputs = {nixpkgs, ...}: let
     supportedSystems = [
       "x86_64-linux"
       "x86_64-darwin"
@@ -25,6 +25,17 @@
         gx = {
           exec = ''$EDITOR "$REPO_ROOT"/go.mod'';
           description = "Edit go.mod";
+        };
+
+        lint = {
+          exec = ''
+            REPO_ROOT="$(git rev-parse --show-toplevel)"
+            golangci-lint run --fix
+            statix check "$REPO_ROOT"/flake.nix
+            deadnix "$REPO_ROOT"/flake.nix
+          '';
+          deps = with pkgs; [golangci-lint git statix deadnix];
+          description = "Run golangci-lint";
         };
       };
 

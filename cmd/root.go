@@ -27,6 +27,7 @@ func Execute() error {
 	viper.SetConfigName("groqmit")
 	viper.SetConfigType("yaml")
 	viper.AddConfigPath(configDir)
+
 	return RootCmd.Execute()
 }
 

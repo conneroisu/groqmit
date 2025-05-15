@@ -25,6 +25,7 @@ func Diff(ctx context.Context) (string, error) {
 	if ew.Len() > 0 {
 		return "", errors.New(ew.String())
 	}
+
 	return w.String(), nil
 }
 
@@ -48,5 +49,6 @@ func DiffFile(ctx context.Context, filepath string) (string, error) {
 	if ew.Len() > 0 {
 		return "", errors.New(ew.String())
 	}
+
 	return w.String(), nil
 }

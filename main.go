@@ -12,6 +12,7 @@ func main() {
 	err := cmd.Execute()
 	if err != nil {
 		fmt.Println(err)
+
 		return
 	}
 }
