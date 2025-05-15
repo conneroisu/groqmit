@@ -37,11 +37,18 @@ func init() {
 		"c",
 		"",
 		`config file (default is $HOME/.config/groqmit/groqmit.yaml)
-On Unix systems, it returns $XDG_CONFIG_HOME as specified by
-https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html if
-non-empty, else $HOME/.config.
-On Darwin, it returns $HOME/Library/Application Support.
-On Windows, it returns %AppData%.
+On Unix systems, 
+
+it returns $XDG_CONFIG_HOME as specified by https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html 
+if non-empty, else $HOME/.config.
+		
+On Darwin, 
+
+it returns $HOME/Library/Application Support.
+		
+On Windows, 
+
+it returns %AppData%.
 		`,
 	)
 }
